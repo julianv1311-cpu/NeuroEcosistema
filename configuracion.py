@@ -1,8 +1,20 @@
 
 # Configuración general del NeuroEcosistema
 
-ANCHO = 1000
-ALTO = 650
+import pygame
+
+
+def _obtener_dimensiones():
+    if not pygame.display.get_init():
+        return 500, 500
+
+    info = pygame.display.Info()
+    ancho = max(500, int(info.current_w * 0.9))
+    alto = max(300, int(info.current_h * 0.9))
+    return ancho, alto
+
+
+ANCHO, ALTO = _obtener_dimensiones()
 
 FPS = 60
 

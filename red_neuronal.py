@@ -7,8 +7,8 @@ class RedNeuronal:
     def __init__(
         self,
         entradas=10,
-        oculta1=32,
-        oculta2=16,
+        oculta1=16,
+        oculta2=8,
         salidas=5
     ):
         self.W1 = np.random.randn(entradas, oculta1) * 0.1

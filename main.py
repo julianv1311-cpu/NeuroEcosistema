@@ -3,6 +3,8 @@ from pathlib import Path
 import matplotlib.pyplot as plt
 import pygame
 
+pygame.init()
+
 from configuracion import *
 from ecosistema import (
     Ecosistema,
@@ -142,8 +144,6 @@ class VentanaEntrenamiento:
             except Exception:
                 pass
 
-
-pygame.init()
 
 pantalla = pygame.display.set_mode((ANCHO, ALTO))
 pygame.display.set_caption("NeuroEcosistema")
@@ -415,18 +415,20 @@ while ejecutando:
         texto = fuente.render(linea, True, COLOR_TEXTO)
         pantalla.blit(texto, (490, 48 + i * 20))
 
-    controles = "Modos: 1-Entrenado | 2-Aleatorio | 3-Reglas | T-+100 Epocas"
-    escenarios = "Escenarios: F1-Recursos | F2-Escasez | F3-Depredacion"
+    controles = "-Modos: 1-Entrenado | 2-Aleatorio | 3-Reglas | T-+100 Epocas | "
+    
+    escenarios = "   Escenarios: F1-Recursos | F2-Escasez | F3-Depredacion         Reiniciar: R" 
 
     pantalla.blit(
         fuente.render(controles, True, COLOR_TEXTO),
         (25, 128)
     )
-
+    
     pantalla.blit(
         fuente.render(escenarios, True, COLOR_TEXTO),
-        (430, 128)
+        (430, 128) 
     )
+    
 
     pygame.display.flip()
 
